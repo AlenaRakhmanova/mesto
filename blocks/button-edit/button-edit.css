@@ -1,0 +1,18 @@
+.button-edit {
+  background-color: black;
+  background-image: url(../../../images/button/Edit.svg);
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  align-self: end;
+  padding: 0;
+  border-width: 0;
+}
+
+@media all and (max-width: 550px) {
+  .button-edit {
+    width: 18px;
+    height: 18px;
+    align-self: center;
+  }
+}
