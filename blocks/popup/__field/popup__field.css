@@ -1,0 +1,23 @@
+.popup__field {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline-style: none;
+  width: 100%;
+  height: 27px;
+  padding: 0;
+}
+
+.popup__field:last-of-type {
+  margin-bottom: 48px;
+}
+
+.popup__field:focus {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+}
