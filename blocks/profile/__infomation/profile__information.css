@@ -4,6 +4,8 @@
   font-size: 18px;
   line-height: 22px;
   max-width: 450px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media all and (max-width: 550px) {

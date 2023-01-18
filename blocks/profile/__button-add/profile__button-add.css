@@ -1,8 +1,9 @@
-.button-add {
-  background-color: black;
-  background-image: url(../../images/button/Add.svg);
+.profile__button-add {
+  background-color: transparent;
+  background-image: url(../../../images/button/Add.svg);
   background-repeat: no-repeat;
   background-size: 22px;
+  border-radius: 2px;
   background-position: center;
   border: 2px solid white;
   width: 150px;
@@ -11,7 +12,7 @@
 }
 
 @media all and (max-width: 550px) {
-  .button-add {
+  .profile__button-add {
     width: 282px;
     background-size: 16px;
   }

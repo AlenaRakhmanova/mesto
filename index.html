@@ -18,71 +18,82 @@
             <img class="profile__avatar" src="./images/kusto.png" alt="аватар" />
             <div class="profile__info">
               <h1 class="profile__full-name">Жак-Ив Кусто</h1>
-              <button class="button-edit opacity-hover"></button>
+              <button type="button" class="profile__button-edit button-edit opacity-hover"></button>
               <p class="profile__information">Исследователь океана</p>
             </div>
           </div>
-          <button class="button-add opacity-hover"></button>
+          <button type="button" class="profile__button-add button-add opacity-hover"></button>
         </section>
         <section class="elements">
           <div class="elements__place">
             <img class="elements__image" src="./images/place/elbrus.jpg" alt="эльбрус" />
             <div class="elements__caption">
-              <p class="elements__title">Гора Эльбрус</p>
-              <span role="button" class="button-like opacity-hover"> </span>
+              <h3 class="elements__title">Гора Эльбрус</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
           <div class="elements__place">
             <img class="elements__image" src="./images/place/altay.jpg" alt="алтай" />
             <div class="elements__caption">
-              <p class="elements__title">Алтай</p>
-              <span role="button" class="button-like opacity-hover"> </span>
+              <h3 class="elements__title">Алтай</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
           <div class="elements__place">
             <img class="elements__image" src="./images/place/kamchtka.jpg" alt="камчатка" />
             <div class="elements__caption">
-              <p class="elements__title">Камчатский край</p>
-              <span role="button" class="button-like opacity-hover"> </span>
+              <h3 class="elements__title">Камчатский край</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
           <div class="elements__place">
             <img class="elements__image" src="./images/place/kareliya.jpg" alt="карелия" />
             <div class="elements__caption">
-              <p class="elements__title">Карелия</p>
-              <span role="button" class="button-like opacity-hover"> </span>
+              <h3 class="elements__title">Карелия</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
           <div class="elements__place">
             <img class="elements__image" src="./images/place/karachaevo.jpg" alt="карачаево" />
             <div class="elements__caption">
-              <p class="elements__title">Карачаево-Черкесская Республика</p>
-              <span role="button" class="button-like opacity-hover"> </span>
+              <h3 class="elements__title">Карачаево-Черкесская Республика</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
           <div class="elements__place">
             <img class="elements__image" src="./images/place/baikal.jpg" alt="байкал" />
             <div class="elements__caption">
-              <p class="elements__title">Байкал</p>
-              <span role="button" class="button-like opacity-hover"></span>
+              <h3 class="elements__title">Байкал</h3>
+              <button type="button" class="elements__button-like"></button>
             </div>
           </div>
         </section>
       </main>
       <footer class="footer">© 2020 Mesto Russia</footer>
       <div class="popup">
-        <div class="popup__overlay"></div>
         <div class="popup__container">
-          <span role="button" class="button-close opacity-hover"></span>
+          <button type="button" class="popup__button-close opacity-hover"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form method="post" class="popup__form">
-            <input type="text" class="popup__field popup__field_name" />
-            <input type="text" class="popup__field popup__field_info" />
-            <button type="submit" class="button-save opacity-hover">Сохранить</button>
+          <form name="form-edit" method="post" class="popup__form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Имя"
+              required
+              class="popup__field popup__field_value_name"
+            />
+            <input
+              type="text"
+              name="info"
+              placeholder="О себе"
+              required
+              class="popup__field popup__field_value_info"
+            />
+            <button type="submit" class="popup__button-save">Сохранить</button>
           </form>
         </div>
       </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

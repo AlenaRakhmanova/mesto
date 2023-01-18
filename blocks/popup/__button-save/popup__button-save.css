@@ -1,4 +1,4 @@
-.button-save {
+.popup__button-save {
   color: white;
   background-color: black;
   max-width: 358px;
@@ -9,10 +9,15 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+  border: none;
+}
+
+.popup__button-save:hover {
+  opacity: 0.8;
 }
 
 @media all and (max-width: 550px) {
-  .button-save {
+  .popup__button-save {
     max-width: 238px;
     height: 46px;
     font-size: 14px;

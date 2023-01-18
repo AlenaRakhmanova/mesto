@@ -2,14 +2,14 @@
   margin: 0 0 0 30px;
   display: grid;
   grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
-  gap: 16px 18px;
+  gap: 9px 18px;
   /* height: max-content;
   display: flex; */
 }
 
 @media all and (max-width: 550px) {
   .profile__info {
-    gap: 10px 10px;
+    gap: 7px 10px;
     margin: 26px auto 0;
     padding-left: 25px;
   }

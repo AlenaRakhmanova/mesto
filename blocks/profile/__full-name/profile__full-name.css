@@ -2,8 +2,11 @@
   margin: 0;
   font-weight: 500;
   font-size: 42px;
-  line-height: 39px;
+  line-height: 46px;
   max-width: 450px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* align-self: flex-start; */
 }
 
 @media all and (max-width: 550px) {
