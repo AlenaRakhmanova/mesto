@@ -6,6 +6,13 @@
   max-width: 450px;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
+}
+
+@media all and (max-width: 680px) {
+  .profile__information {
+    max-width: 300px;
+  }
 }
 
 @media all and (max-width: 550px) {
