@@ -25,7 +25,7 @@
           <button type="button" class="profile__button-add opacity-hover"></button>
         </section>
         <section class="elements">
-          <div class="elements__place">
+          <!-- <div class="elements__place">
             <img class="elements__image" src="./images/place/elbrus.jpg" alt="эльбрус" />
             <div class="elements__caption">
               <h3 class="elements__title">Гора Эльбрус</h3>
@@ -66,11 +66,11 @@
               <h3 class="elements__title">Байкал</h3>
               <button type="button" class="elements__button-like"></button>
             </div>
-          </div>
+          </div> -->
         </section>
       </main>
       <footer class="footer">© 2020 Mesto Russia</footer>
-      <div class="popup">
+      <div class="popup popup_edit">
         <div class="popup__container">
           <button type="button" class="popup__button-close opacity-hover"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
@@ -93,6 +93,39 @@
           </form>
         </div>
       </div>
+      <div class="popup popup_add">
+        <div class="popup__container">
+          <button type="button" class="popup__button-close opacity-hover"></button>
+          <h3 class="popup__title">Новое место</h3>
+          <form name="form-edit" method="post" class="popup__form">
+            <input
+              type="text"
+              name="place"
+              placeholder="место"
+              required
+              class="popup__field popup__field_value_name"
+            />
+            <input
+              type="text"
+              name="photo"
+              placeholder="фото"
+              required
+              class="popup__field popup__field_value_info"
+            />
+            <button type="submit" class="popup__button-save">Сохранить</button>
+          </form>
+        </div>
+      </div>
+      <template id="places">
+        <div class="elements__place">
+          <img class="elements__image" src="" alt="" />
+          <button type="button" class="elements__button-delete opacity-hover"></button>
+          <div class="elements__caption">
+            <h3 class="elements__title"></h3>
+            <button type="button" class="elements__button-like"></button>
+          </div>
+        </div>
+      </template>
     </div>
     <script src="./scripts/index.js"></script>
   </body>
