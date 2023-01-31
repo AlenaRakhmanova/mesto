@@ -74,7 +74,7 @@
         <div class="popup__container">
           <button type="button" class="popup__button-close opacity-hover"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form name="form-edit" method="post" class="popup__form">
+          <form name="form-edit" method="post" class="popup__form popup__form_func_edit">
             <input
               type="text"
               name="name"
@@ -97,23 +97,30 @@
         <div class="popup__container">
           <button type="button" class="popup__button-close opacity-hover"></button>
           <h3 class="popup__title">Новое место</h3>
-          <form name="form-edit" method="post" class="popup__form">
+          <form name="form-add" method="post" class="popup__form popup__form_func_add">
             <input
               type="text"
               name="place"
-              placeholder="место"
+              placeholder="Название"
               required
-              class="popup__field popup__field_value_name"
+              class="popup__field popup__field_value_place"
             />
             <input
               type="text"
               name="photo"
-              placeholder="фото"
+              placeholder="Ссылка на картинку"
               required
-              class="popup__field popup__field_value_info"
+              class="popup__field popup__field_value_photo"
             />
             <button type="submit" class="popup__button-save">Сохранить</button>
           </form>
+        </div>
+      </div>
+      <div class="popup popup_image">
+        <div class="popup__container popup__conteiner_images">
+          <img class="popup__conteiner_image" height="200px" src="" alt="">
+          <button type="button" class="popup__button-close opacity-hover"></button>
+          <h3 class="popup__title popup__title_image"></h3>
         </div>
       </div>
       <template id="places">
