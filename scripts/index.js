@@ -148,7 +148,7 @@ function showImagePopup(image) {
   // popupImage.classList.add("popup_opened");
   showPopup(popupImage);
   console.log(image);
-  const popupContImg = popupImage.querySelector(".popup__conteiner_image");
+  const popupContImg = popupImage.querySelector(".popup__image");
   console.log(popupContImg);
   popupContImg.src = image.src;
   popupContImg.alt = image.alt;
