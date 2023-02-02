@@ -15,9 +15,9 @@
   margin-bottom: 48px;
 }
 
-.popup__field:focus {
+/* .popup__field:focus {
   border: 2px solid black;
   border-radius: 5px;
   padding-left: 10px;
   width: calc(100% - 10px);
-}
+} */
