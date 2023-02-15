@@ -9,7 +9,6 @@ const buttonAdd = profile.querySelector(".profile__button-add");
 const popupFieldName = document.querySelector(".popup__field_value_name");
 const popupFieldInfo = document.querySelector(".popup__field_value_info");
 const formEdit = document.querySelector(".popup__form_func_edit");
-let buttonLike;
 const template = document.querySelector("#places").content.querySelector(".elements__place");
 const elementsContainer = document.querySelector(".elements");
 const formAdd = document.querySelector(".popup__form_func_add");
@@ -18,21 +17,44 @@ const popupFieldPhoto = document.querySelector(".popup__field_value_photo");
 const buttonDelete = document.querySelector(".elements__button-delete");
 const popupImage = document.querySelector(".popup_image");
 const popupContImg = popupImage.querySelector(".popup__image");
+// const Popup = document.querySelector(".popup_opened");
+const configForm = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__field",
+  submitButtonSelector: ".popup__button-save",
+  inactiveButtonClass: "popup__button-save_inactive",
+  inputErrorClass: "popup__field_invalid",
+  errorClass: "popup__field-error_active",
+};
 
-/*Функция открытия модального окна*/
+/*Открытие модального окна*/
 function showPopup(modal) {
   modal.classList.add("popup_opened");
+  document.addEventListener("keydown", (e) => closeByButton(e, modal));
 }
 
-/*Функция закрытия модального окна*/
+/*Закрытие модального окна*/
 function closePopup(modal) {
   modal.classList.remove("popup_opened");
+  document.removeEventListener("keydown", (e) => closeByButton(e, modal));
 }
 
 popupButtonsClose.forEach((button) => {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
 });
+
+function closeByButton(e, popup) {
+  if (e.keyCode === 27) {
+    closePopup(popup);
+  }
+}
+
+function closeByOverlay(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closePopup(evt.target);
+  }
+}
 
 /*Открытие окна редактирования*/
 function handleEditProfile() {
@@ -90,13 +112,16 @@ function handleAddition() {
 /*Добавить новую карточку*/
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
   const place = popupFieldPlace.value;
   const photo = popupFieldPhoto.value;
+  const buttonElement = form.querySelector(".popup__button-save");
   const card = createCard({ name: place, link: photo });
   elementsContainer.prepend(card);
+  buttonElement.classList.add("popup__button-save_inactive");
+  buttonElement.setAttribute("disabled", "true");
   closePopup(popupAdd);
-  popupFieldPlace.value = "";
-  popupFieldPhoto.value = "";
+  form.reset();
 }
 
 /*Открыть картинку*/
@@ -116,3 +141,7 @@ buttonAdd.addEventListener("click", handleAddition);
 formEdit.addEventListener("submit", handleFormSubmit);
 
 formAdd.addEventListener("submit", handleFormAddSubmit);
+
+document.addEventListener("mousedown", closeByOverlay);
+
+enableValidation(configForm);
