@@ -222,6 +222,10 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
+*:focus-visible {
+  outline: none;
+}
+
 /**
  * Correct the padding in Firefox.
  */
