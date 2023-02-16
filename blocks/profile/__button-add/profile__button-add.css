@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+.profile__button-add:focus-visible {
+  outline: none;
+}
+
 @media all and (max-width: 850px) {
   .profile__button-add {
     margin-top: 20px;

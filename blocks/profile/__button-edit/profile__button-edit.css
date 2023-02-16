@@ -10,9 +10,9 @@
   margin-top: 10px;
 }
 
-/* .profile__button-edit:focus-visible {
+.profile__button-edit:focus-visible {
   outline: none;
-} */
+}
 
 @media all and (max-width: 550px) {
   .profile__button-edit {
