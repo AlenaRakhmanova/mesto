@@ -1,4 +1,3 @@
-
 const initialCards = [
   {
     name: "Гора Эльбрус",
@@ -25,14 +24,3 @@ const initialCards = [
     link: "./images/place/baikal.jpg",
   },
 ];
-
-
-// function renderCards(items) {
-//   items.forEach((item) => {
-//     const card = new DefaultCard(item);
-//     const cardElement = card.generateCard();
-//     elementsContainer.prepend(cardElement);
-//   });
-//  }
-
-//  renderCards(initialCards);

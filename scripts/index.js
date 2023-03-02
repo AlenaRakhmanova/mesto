@@ -17,6 +17,8 @@ const popupFieldPlace = document.querySelector(".popup__field_value_place");
 const popupFieldPhoto = document.querySelector(".popup__field_value_photo");
 const popupImage = document.querySelector(".popup_image");
 const popups = document.querySelectorAll(".popup");
+const popupContImg = popupImage.querySelector(".popup__image");
+const popupTitle = popupImage.querySelector(".popup__title");
 const configForm = {
   formSelector: ".popup__form",
   inputSelector: ".popup__field",
@@ -60,6 +62,7 @@ function closeByEscape(e) {
 function handleEditProfile() {
   popupFieldName.value = profileFullName.textContent;
   popupFieldInfo.value = profileInf.textContent;
+  formValidEdit.resetValidation();
   showPopup(popupEdit);
 }
 
@@ -71,10 +74,16 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupEdit);
 }
 
+/*Создать новую карточку*/
+function createCard(item) {
+  const card = new Card(item, "#places", OpenImage);
+  const cardElement = card.generateCard();
+  return cardElement;
+}
+
 function renderCards(items) {
   items.forEach((item) => {
-    const card = new Card(item, "#places", popupImage, showPopup);
-    const cardElement = card.generateCard();
+    const cardElement = createCard(item);
     elementsContainer.prepend(cardElement);
   });
 }
@@ -87,13 +96,21 @@ function openCardPopup() {
 /*Добавить новую карточку*/
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
-  const form = evt.target;
   const cards = { name: popupFieldPlace.value, link: popupFieldPhoto.value };
-  const card = new Card(cards, "#places", popupImage, showPopup);
-  const cardElement = card.generateCard();
+  const cardElement = createCard(cards);
   elementsContainer.prepend(cardElement);
+  evt.submitter.classList.add("popup__button-save_inactive");
+  evt.submitter.setAttribute("disabled", "true");
   closePopup(popupAdd);
-  form.reset();
+  formValidAdd.formReset();
+}
+
+/*Открыть картинку*/
+function OpenImage(name, link) {
+  popupContImg.src = link;
+  popupContImg.alt = name;
+  popupTitle.textContent = name;
+  showPopup(popupImage);
 }
 
 const formValidAdd = new FormValidator(configForm, formAdd);
