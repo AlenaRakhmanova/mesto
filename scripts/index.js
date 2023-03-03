@@ -96,13 +96,13 @@ function openCardPopup() {
 /*Добавить новую карточку*/
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
   const cards = { name: popupFieldPlace.value, link: popupFieldPhoto.value };
   const cardElement = createCard(cards);
   elementsContainer.prepend(cardElement);
-  evt.submitter.classList.add("popup__button-save_inactive");
-  evt.submitter.setAttribute("disabled", "true");
   closePopup(popupAdd);
-  formValidAdd.formReset();
+  form.reset();
+  formValidAdd.resetValidation();
 }
 
 /*Открыть картинку*/
