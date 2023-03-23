@@ -30,6 +30,8 @@ export class Card {
   _setEventListeners() {
     this._likeButton = this._element.querySelector(".elements__button-like");
     this._cardImage.addEventListener("click", () => {
+      console.log(this);
+
       this._callbackShowPopup(this._name, this._link);
     });
     this._element.querySelector(".elements__button-delete").addEventListener("click", () => {
