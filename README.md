@@ -24,4 +24,4 @@
 ---
 ## Ссылка на проект:
 
-https://alenarakhmanova.github.io/mesto/index.html
+https://alenarakhmanova.github.io/mesto/
