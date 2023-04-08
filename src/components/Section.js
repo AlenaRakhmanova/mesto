@@ -5,7 +5,8 @@ export class Section {
     this._renderer = renderer;
   }
 
-  renderItems() {
+  renderItems(cardData) {
+    this._renderedItems = cardData.reverse();
     this._renderedItems.forEach((item) => {
       const cardElement = this._renderer(item);
       this.addItem(cardElement);

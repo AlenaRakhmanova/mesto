@@ -1,16 +1,17 @@
-.profile__avatar {
-  width: 120px;
-  height: 120px;
+.profile__container-avatar {
+  position: relative;
   border-radius: 50%;
-  /* position: relative; */
 }
 
-/* .profile__avatar:hover::before {
+.profile__container-avatar:hover::before {
+  content: "";
   position: absolute;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url(../../../images/icons/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
-} */
+}

@@ -14,7 +14,9 @@
       <main class="content">
         <section class="profile">
           <div class="profile__flex">
-            <img class="profile__avatar" src="<%=require('./images/kusto.png')%>" alt="аватар" />
+            <div class="profile__container-avatar">
+              <img class="profile__avatar" src="<%=require('./images/kusto.png')%>" alt="аватар" />
+            </div>
             <div class="profile__info">
               <h1 class="profile__full-name">Жак-Ив Кусто</h1>
               <button type="button" class="profile__button-edit opacity-hover"></button>
@@ -93,13 +95,46 @@
           <h3 class="popup__title popup__title_image"></h3>
         </div>
       </div>
+      <div class="popup popup_confirmation">
+        <div class="popup__container">
+          <button type="button" class="popup__button-close opacity-hover"></button>
+          <h3 class="popup__title">Вы уверены?</h3>
+          <button type="button" class="popup__button-confirmation">Да</button>
+        </div>
+      </div>
+      <div class="popup popup_update-avatar">
+        <div class="popup__container">
+          <button type="button" class="popup__button-close opacity-hover"></button>
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form
+            name="form-update"
+            method="post"
+            class="popup__form popup__form_func_update"
+            novalidate
+          >
+            <input
+              type="url"
+              id="picture"
+              name="picture"
+              placeholder="Ссылка на картинку"
+              required
+              class="popup__field popup__field_value_picture"
+            />
+            <span class="popup__field-error picture-field-error"></span>
+            <button type="submit" class="popup__button-save">Сохранить</button>
+          </form>
+        </div>
+      </div>
       <template id="places">
         <div class="elements__place">
           <img class="elements__image" />
           <button type="button" class="elements__button-delete opacity-hover"></button>
           <div class="elements__caption">
             <h3 class="elements__title"></h3>
-            <button type="button" class="elements__button-like"></button>
+            <div class="elements__likes">
+              <button type="button" class="elements__button-like"></button>
+              <span class="elements__number-like">0</span>
+            </div>
           </div>
         </div>
       </template>
