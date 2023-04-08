@@ -11,7 +11,6 @@ import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
 const profile = document.querySelector(".profile");
 const buttonEdit = profile.querySelector(".profile__button-edit");
 const buttonAdd = profile.querySelector(".profile__button-add");
-// const avatar = profile.querySelector(".profile__avatar");
 const containerAvatar = profile.querySelector(".profile__container-avatar");
 const popupFieldName = document.querySelector(".popup__field_value_name");
 const popupFieldInfo = document.querySelector(".popup__field_value_info");
@@ -36,25 +35,6 @@ const dataApi = {
 };
 
 const api = new Api(dataApi);
-
-api
-  .getInfoUser()
-  .then((data) => {
-    userInfo.setUserInfo(data);
-    userInfo.setUserId(data);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-api
-  .getAllCards()
-  .then((cardData) => {
-    itemCard.renderItems(cardData);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 /*Открытие окна редактирования*/
 function handleEditProfile() {
@@ -241,3 +221,13 @@ buttonEdit.addEventListener("click", handleEditProfile);
 buttonAdd.addEventListener("click", openCardPopup);
 
 containerAvatar.addEventListener("click", openPopupUpdateAvatar);
+
+Promise.all([api.getInfoUser(), api.getAllCards()])
+  .then(([userData, cardData]) => {
+    userInfo.setUserInfo(userData);
+    userInfo.setUserId(userData);
+    itemCard.renderItems(cardData);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
