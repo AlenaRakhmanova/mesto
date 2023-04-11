@@ -60,8 +60,8 @@ function handleProfileFormSubmit(evt, dataInputValues) {
     })
     .finally(() => {
       popupEdit.renderLoading(false);
+      popupEdit.close();
     });
-  popupEdit.close();
 }
 
 /*Создать новую карточку*/
@@ -83,6 +83,7 @@ function createCard(cardData) {
 
 /*Открытие окна добавления карточки*/
 function openCardPopup() {
+  formValidAdd.resetValidation();
   popupAdd.open();
 }
 
@@ -102,15 +103,15 @@ function handleFormAddSubmit(evt, dataInputValues) {
       console.log(err);
     })
     .finally(() => {
-      console.log(111111111);
       popupAdd.renderLoading(false);
+      popupAdd.close();
     });
-  popupAdd.close();
-  formValidAdd.resetValidation();
+  // formValidAdd.resetValidation();
 }
 
 /*Открытие попапа обновления аватара*/
 function openPopupUpdateAvatar() {
+  formValidUpdateAvatar.resetValidation();
   popupUpdateAvatar.open();
 }
 
@@ -129,9 +130,9 @@ function updateAvatar(evt, dataInputValues) {
     })
     .finally(() => {
       popupUpdateAvatar.renderLoading(false);
+      popupUpdateAvatar.close();
     });
-  popupUpdateAvatar.close();
-  formValidUpdateAvatar.resetValidation();
+  // formValidUpdateAvatar.resetValidation();
 }
 
 function callbackAddLike(card) {
