@@ -54,13 +54,14 @@ function handleProfileFormSubmit(evt, dataInputValues) {
     .setInfoUser(userData)
     .then((data) => {
       userInfo.setUserInfo(data);
+      popupEdit.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupEdit.renderLoading(false);
-      popupEdit.close();
+      // popupEdit.close();
     });
 }
 
@@ -95,18 +96,17 @@ function handleFormAddSubmit(evt, dataInputValues) {
   api
     .addNewCard(cards)
     .then((cardData) => {
-      console.log(cardData);
       const newCard = createCard(cardData);
       itemCard.addItem(newCard);
+      popupAdd.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupAdd.renderLoading(false);
-      popupAdd.close();
+      // popupAdd.close();
     });
-  // formValidAdd.resetValidation();
 }
 
 /*Открытие попапа обновления аватара*/
@@ -124,15 +124,15 @@ function updateAvatar(evt, dataInputValues) {
     .updateAvatar(avatar)
     .then((data) => {
       userInfo.setAvatarLink(data.avatar);
+      popupUpdateAvatar.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       popupUpdateAvatar.renderLoading(false);
-      popupUpdateAvatar.close();
+      // popupUpdateAvatar.close();
     });
-  // formValidUpdateAvatar.resetValidation();
 }
 
 function callbackAddLike(card) {
